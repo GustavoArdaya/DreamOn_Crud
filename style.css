@@ -7,13 +7,17 @@
     justify-content:center;
     gap:20px;
     padding: 20px;
+    background-color:rgb(56, 127, 194);
+    color: white;
 
 }
 .add_items {
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding:10px;
+    padding:10px 20px 20px 20px;
+    background-color:rgb(56, 127, 194);
+    color: white;
 }
 
 .content {
@@ -32,8 +36,11 @@
 
 .item_img_container {
     height: 200px;
-    width: 200px;
     padding: 5px 25px;
+    border: solid #999 1px;
+    overflow: hidden;
+    
+    border-radius: 10px 10px 0 0;
 }
 
 .item_img {
@@ -43,12 +50,15 @@
     display: grid;
     grid-template-areas: "title name name name delete edit";
     justify-content: space-between;
+    border: solid #999 1px;
+    padding: 10px;
+    border-radius: 0px 0px 10px 10px;
     
 }
 
 .item_title {
-    font-weight: bold;
     grid-area: title;
+    font-weight: bold;
 }
 
 .item_name {

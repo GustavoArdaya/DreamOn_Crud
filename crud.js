@@ -1,0 +1,4 @@
+const item = {
+    name: "",
+    photoUrl: ""
+}
