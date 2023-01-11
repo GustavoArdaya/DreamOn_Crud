@@ -73,16 +73,19 @@
 }
 
 .item_img_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 200px;
     padding: 5px 25px;
     border: solid #999 1px;
     overflow: hidden;
-    
     border-radius: 10px 10px 0 0;
+    object-fit: cover;
 }
 
 .item_img {
-    width: 100%;
+    width: 250px
 }
 .item_text {
     display: grid;
