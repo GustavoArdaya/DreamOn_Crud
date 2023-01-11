@@ -69,6 +69,7 @@
 .item_container {
     height: 250px;
     width: 250px;
+    position: relative;
 }
 
 .item_img_container {
@@ -85,7 +86,7 @@
 }
 .item_text {
     display: grid;
-    grid-template-areas: "title name name delete edit";
+    grid-template-areas: "title name name edit";
     justify-content: space-between;
     border: solid #999 1px;
     padding: 10px;
@@ -104,10 +105,27 @@
     border: none;
 }
 
+.item_name:focus {
+    outline: none;
+}
+
 .fa-trash {
-    grid-area: delete;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    
+}
+
+.fa-trash:hover {
+    opacity: 0.6;
+    cursor:pointer;
 }
 
 .fa-pen-to-square {
     grid-area: edit;
+}
+
+.fa-pen-to-square:hover {
+    opacity: 0.6;
+    cursor:pointer;
 }
