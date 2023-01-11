@@ -111,7 +111,7 @@
     background-color: rgb(56, 127, 194);
     color: white;
     display: grid;
-    grid-template-areas: "title name name edit";
+    grid-template-areas: "title name name edit edit";
     justify-content: space-between;
     /* border: solid #999 1px; */
     padding: 10px;
@@ -153,6 +153,7 @@
 
 .fa-pen-to-square {
     grid-area: edit;
+    justify-self: right;
 }
 
 .fa-pen-to-square:hover {

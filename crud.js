@@ -71,20 +71,33 @@ function render() {
                     readonly="true"
                     style
                 />
-                <i onclick="editItem(${i})"class="fa-solid fa-pen-to-square"></i>
+                <i id="editButton0${i}" style onclick="editItem(${i})"class="fa-solid fa-pen-to-square"></i>
+                <i id="cancelEditButton0${i}" style="display: none" onclick="cancelEdit()"class="fa-solid fa-xmark"></i>
+                <i id="confirmEditButton0${i}" style="display: none" class="fa-solid fa-check"></i>
             </div>
-            <i onclick="deleteItem(${i})"class="fa-solid fa-trash"></i>
+            <i style onclick="deleteItem(${i})"class="fa-solid fa-trash"></i>
         </li>`
     }
     itemListDOM.innerHTML = template;
 }
+// Edit and delete item functions
 
 function editItem(indexToEdit) {
+    let editButton = document.getElementById(`editButton0${indexToEdit}`);
+    let cancelButton = document.getElementById(`cancelEditButton0${indexToEdit}`);
+    let confirmButton = document.getElementById(`confirmEditButton0${indexToEdit}`);
     let inputToModify = document.getElementById(`item0${indexToEdit}_name`);
     console.log(inputToModify.readonly);
+    editButton.style = "display: none"
+    cancelButton.style = "";
+    confirmButton.style = "";
     inputToModify.readonly="false";
     inputToModify.style="pointer-events: auto; background-color: white; color: black";
     inputToModify.value= itemList[indexToEdit].name;
+}
+
+function cancelEdit() {
+
 }
 
 function deleteItem(indexToDelete) {
