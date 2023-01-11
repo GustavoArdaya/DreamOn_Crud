@@ -72,7 +72,7 @@ function render() {
                     style
                 />
                 <i id="editButton0${i}" style onclick="editItem(${i})"class="fa-solid fa-pen-to-square"></i>
-                <i id="cancelEditButton0${i}" style="display: none" onclick="cancelEdit()"class="fa-solid fa-xmark"></i>
+                <i id="cancelEditButton0${i}" style="display: none" onclick="cancelEdit(${i})"class="fa-solid fa-xmark"></i>
                 <i id="confirmEditButton0${i}" style="display: none" class="fa-solid fa-check"></i>
             </div>
             <i style onclick="deleteItem(${i})"class="fa-solid fa-trash"></i>
@@ -96,8 +96,18 @@ function editItem(indexToEdit) {
     inputToModify.value= itemList[indexToEdit].name;
 }
 
-function cancelEdit() {
+function cancelEdit(indexToEdit) {
+    let editButton = document.getElementById(`editButton0${indexToEdit}`);
+    let cancelButton = document.getElementById(`cancelEditButton0${indexToEdit}`);
+    let confirmButton = document.getElementById(`confirmEditButton0${indexToEdit}`);
+    let inputToModify = document.getElementById(`item0${indexToEdit}_name`);
 
+    editButton.style = ""
+    cancelButton.style = "display: none";
+    confirmButton.style = "display: none";
+    inputToModify.readonly="false";
+    inputToModify.style="pointer-events: none; background-color: rgb(56, 127, 194); color: white";
+    inputToModify.value= itemList[indexToEdit].name;
 }
 
 function deleteItem(indexToDelete) {
