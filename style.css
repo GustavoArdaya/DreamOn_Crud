@@ -41,6 +41,7 @@
 }
 .item_input_bar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     padding:10px 20px 20px 20px;
@@ -73,17 +74,19 @@
 }
 
 .content {
-    padding: 20px 40px;
+    padding: 50px 40px;
 }
 #object_list {
     display: grid;
-    grid-template: repeat(3, 2 fr);
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
     list-style-type: none;
+    gap: 40px;
 }
 
 .item_container {
     height: 250px;
-    width: 250px;
+    width: 300px;
     position: relative;
 }
 
@@ -100,7 +103,7 @@
 }
 
 .item_img {
-    width: 250px
+    height: 250px;
 }
 .item_text {
     background-color: rgb(56, 127, 194);

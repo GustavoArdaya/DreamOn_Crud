@@ -4,14 +4,20 @@ let minusButton = document.getElementById("minus_button");
 let addBar = document.getElementById("add_items_bar");
 let titleInput = document.getElementById("add_title");
 let urlInput = document.getElementById("add_image");
-let listaDOM = document.getElementById("object_list");
+let itemListDOM = document.getElementById("object_list");
 
 // main variables
 const item = {
     name: "",
     photoUrl: ""
 }
-let itemList = [{name: "Paisaje 1", photoUrl: "https://expertphotography.b-cdn.net/wp-content/uploads/2022/05/Landscape-Photography-Sophie-Turner.jpg" }, {name: "Paisaje 2", photoUrl: "https://www.blogdelfotografo.com/wp-content/uploads/2014/08/61.jpg"}];
+let itemList = [{name: "Paisaje 1", photoUrl: "https://expertphotography.b-cdn.net/wp-content/uploads/2022/05/Landscape-Photography-Sophie-Turner.jpg" }, 
+{name: "Paisaje 2", photoUrl: "https://www.blogdelfotografo.com/wp-content/uploads/2014/08/61.jpg"},
+{name: "Paisaje 3", photoUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"}];
+
+// Render at load
+
+render();
 
 // Add Bar functions
 function showAddBar() {
@@ -45,11 +51,11 @@ function render() {
     let template = "";
     for (let i = 0; i < itemList.length; i++) {
         template += 
-        `<li class="item_container" id="item${i}">
+        `<li class="item_container" id="item-${i}">
             <div class="item_img_container">
                 <img
                     class="item_img"
-                    id="img${i}"
+                    id="img-${i}"
                     src="${itemList[i].photoUrl}"
                     alt="#"
                 />
@@ -69,6 +75,7 @@ function render() {
             <i onclick="alert()"class="fa-solid fa-trash"></i>
         </li>`
     }
+    itemListDOM.innerHTML = template;
 }
 
 function editItem() {
