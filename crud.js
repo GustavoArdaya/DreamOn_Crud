@@ -44,6 +44,7 @@ function createNewItem() {
         console.log(itemList);
     } else console.log("incorrect input"); 
     console.log(isValidUrl(urlInput.value));
+    render();
     }
 
 // Render function    
@@ -64,22 +65,31 @@ function render() {
                 <p class="item_title">Title:</p>
                 <input
                     type="text"
-                    id="item_name#"
+                    id="item0${i}_name"
                     class="item_name"
                     value="${itemList[i].name}"
                     readonly="true"
                     style
                 />
-                <i onclick="alert()"class="fa-solid fa-pen-to-square"></i>
+                <i onclick="editItem(${i})"class="fa-solid fa-pen-to-square"></i>
             </div>
-            <i onclick="alert()"class="fa-solid fa-trash"></i>
+            <i onclick="deleteItem(${i})"class="fa-solid fa-trash"></i>
         </li>`
     }
     itemListDOM.innerHTML = template;
 }
 
-function editItem() {
+function editItem(indexToEdit) {
+    let inputToModify = document.getElementById(`item0${indexToEdit}_name`);
+    console.log(inputToModify.readonly);
+    inputToModify.readonly="false";
+    inputToModify.style="pointer-events: auto; background-color: white; color: black";
+    inputToModify.value= itemList[indexToEdit].name;
+}
 
+function deleteItem(indexToDelete) {
+    itemList.splice(indexToDelete, 1);
+    render();
 }
 
 // check valid url function
@@ -95,5 +105,3 @@ function isValidUrl(urlString) {
 } 
 
 
-
-console.log(itemList[0].name);
