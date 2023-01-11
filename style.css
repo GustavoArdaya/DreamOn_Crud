@@ -1,0 +1,64 @@
+* {
+    padding:0;
+    margin:0;
+}
+.navbar {
+    display: flex;
+    justify-content:center;
+    gap:20px;
+    padding: 20px;
+
+}
+.add_items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding:10px;
+}
+
+.content {
+    padding: 20px 40px;
+}
+#object_list {
+    display: grid;
+    grid-template: repeat(3, 2 fr);
+    list-style-type: none;
+}
+
+.item_container {
+    height: 250px;
+    width: 250px;
+}
+
+.item_img_container {
+    height: 200px;
+    width: 200px;
+    padding: 5px 25px;
+}
+
+.item_img {
+    width: 100%;
+}
+.item_text {
+    display: grid;
+    grid-template-areas: "title name name name delete edit";
+    justify-content: space-between;
+    
+}
+
+.item_title {
+    font-weight: bold;
+    grid-area: title;
+}
+
+.item_name {
+    grid-area: name;
+}
+
+.fa-trash {
+    grid-area: delete;
+}
+
+.fa-pen-to-square {
+    grid-area: edit;
+}
