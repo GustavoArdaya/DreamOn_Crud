@@ -85,7 +85,7 @@
 }
 .item_text {
     display: grid;
-    grid-template-areas: "title name name name delete edit";
+    grid-template-areas: "title name name delete edit";
     justify-content: space-between;
     border: solid #999 1px;
     padding: 10px;
@@ -100,6 +100,8 @@
 
 .item_name {
     grid-area: name;
+    width: 130px;
+    border: none;
 }
 
 .fa-trash {
