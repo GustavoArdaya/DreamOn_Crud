@@ -1,3 +1,10 @@
+// Local Storage retrieve
+let jsonArr = undefined;
+let parsedArr = undefined;
+retrieveStoredArray();
+
+
+
 // DOM variables:
 let addButton = document.getElementById("plus_button");
 let minusButton = document.getElementById("minus_button");
@@ -7,13 +14,12 @@ let urlInput = document.getElementById("add_image");
 let itemListDOM = document.getElementById("object_list");
 
 // main variables
-const item = {
-    name: "",
-    photoUrl: ""
-}
-let itemList = [{name: "Paisaje 1", photoUrl: "https://expertphotography.b-cdn.net/wp-content/uploads/2022/05/Landscape-Photography-Sophie-Turner.jpg" }, 
-{name: "Paisaje 2", photoUrl: "https://www.blogdelfotografo.com/wp-content/uploads/2014/08/61.jpg"},
-{name: "Paisaje 3", photoUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"}];
+let itemList = [];
+itemList = parsedArr;
+
+// let itemList = [{name: "Paisaje 1", photoUrl: "https://expertphotography.b-cdn.net/wp-content/uploads/2022/05/Landscape-Photography-Sophie-Turner.jpg" }, 
+// {name: "Paisaje 2", photoUrl: "https://www.blogdelfotografo.com/wp-content/uploads/2014/08/61.jpg"},
+// {name: "Paisaje 3", photoUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"}];
 
 // Render at load
 
@@ -44,6 +50,7 @@ function createNewItem() {
         console.log(itemList);
     } else console.log("incorrect input"); 
     console.log(isValidUrl(urlInput.value));
+    storeLocally()
     render();
     }
 
@@ -125,12 +132,14 @@ function confirmEdit(indexToEdit) {
     cancelButton.setAttribute("style", "display: none");
     confirmButton.setAttribute("style", "display: none");
     inputToModify.setAttribute("readonly", "readonly");
-    inputToModify.setAttribute("style", "pointer-events: none; background-color: rgb(56, 127, 194); color: white;")
+    inputToModify.setAttribute("style", "pointer-events: none; background-color: rgb(56, 127, 194); color: white;");
+    storeLocally();
 }
 
 
 function deleteItem(indexToDelete) {
     itemList.splice(indexToDelete, 1);
+    storeLocally()
     render();
 }
 
@@ -146,5 +155,19 @@ function isValidUrl(urlString) {
     '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
     return !!urlPattern.test(urlString);
 } 
+
+//Local Storage Functions
+
+function storeLocally(){
+
+jsonArr = JSON.stringify(itemList); // convert array to JSON string using JSON.stringify()
+localStorage.setItem("storedList", jsonArr); // save to localStorage
+}
+
+function retrieveStoredArray(){
+let str = localStorage.getItem("storedList"); // get the string from localStorage
+parsedArr = JSON.parse(str); // convert string to valid object
+}
+
 
 
