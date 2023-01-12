@@ -16,6 +16,7 @@ let itemListDOM = document.getElementById("object_list");
 // main variables
 let itemList = [];
 itemList = parsedArr;
+displayList = itemList;
 
 // commented test array*
 
@@ -28,8 +29,10 @@ itemList = parsedArr;
 render();
 
 // Search bar functions
-function filterResults() {
-
+function filterResults(searchInput) {
+let keyword = searchInput.toLowerCase();
+let regex = new RegExp(`${keyword}`, "g");
+displayList = itemList.filter(key => regex.test(key.name.toLowerCase()));
 }
 
 // Add Bar functions
@@ -136,7 +139,6 @@ function confirmEdit(indexToEdit) {
     let oldName = itemList[indexToEdit].name;
     if (oldName != newName && newName != "") itemList[indexToEdit].name=newName;
     else inputToModify.value = oldName;
-    console.log(itemList);
     editButton.setAttribute("style", "display: initial");
     cancelButton.setAttribute("style", "display: none");
     confirmButton.setAttribute("style", "display: none");
