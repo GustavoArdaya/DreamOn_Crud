@@ -17,13 +17,20 @@ let itemListDOM = document.getElementById("object_list");
 let itemList = [];
 itemList = parsedArr;
 
-// let itemList = [{name: "Paisaje 1", photoUrl: "https://expertphotography.b-cdn.net/wp-content/uploads/2022/05/Landscape-Photography-Sophie-Turner.jpg" }, 
-// {name: "Paisaje 2", photoUrl: "https://www.blogdelfotografo.com/wp-content/uploads/2014/08/61.jpg"},
-// {name: "Paisaje 3", photoUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"}];
+// commented test array*
+
+/*itemList = [{name: "Paisaje 1", photoUrl: "https://expertphotography.b-cdn.net/wp-content/uploads/2022/05/Landscape-Photography-Sophie-Turner.jpg" }, 
+{name: "Paisaje 2", photoUrl: "https://www.blogdelfotografo.com/wp-content/uploads/2014/08/61.jpg"},
+{name: "Paisaje 3", photoUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"}]; */
 
 // Render at load
 
 render();
+
+// Search bar functions
+function filterResults() {
+
+}
 
 // Add Bar functions
 function showAddBar() {
@@ -127,7 +134,9 @@ function confirmEdit(indexToEdit) {
     let inputToModify = document.getElementById(`item0${indexToEdit}_name`);
     let newName = document.getElementById(`item0${indexToEdit}_name`).value;
     let oldName = itemList[indexToEdit].name;
-    if (oldName != newName) itemList[indexToEdit].name=newName;
+    if (oldName != newName && newName != "") itemList[indexToEdit].name=newName;
+    else inputToModify.value = oldName;
+    console.log(itemList);
     editButton.setAttribute("style", "display: initial");
     cancelButton.setAttribute("style", "display: none");
     confirmButton.setAttribute("style", "display: none");
