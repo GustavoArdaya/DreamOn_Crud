@@ -5,7 +5,7 @@ retrieveStoredArray();
 
 
 
-// DOM variables:
+// DOM global variables:
 let addButton = document.getElementById("plus_button");
 let minusButton = document.getElementById("minus_button");
 let addBar = document.getElementById("add_items_bar");
@@ -117,13 +117,10 @@ function editItem(indexToEdit) {
     let inputToModify = document.getElementById(`item0${indexToEdit}_name`);
     editButton.setAttribute("style", "display: none")
     cancelButton.setAttribute("style", "display: initial")
-    //cancelButton.removeAttribute("style");
     confirmButton.setAttribute("style", "display: initial");
-    //confirmButton.removeAttribute("style");
-    //inputToModify.setAttribute("readonly", "readonly");
     inputToModify.removeAttribute("readonly");
     inputToModify.style="pointer-events: auto; background-color: white; color: black";
-    //inputToModify.value= itemList[indexToEdit].name;
+    
 }
 
 function cancelEdit(indexToEdit) {
@@ -133,12 +130,10 @@ function cancelEdit(indexToEdit) {
     let inputToModify = document.getElementById(`item0${indexToEdit}_name`);
 
     editButton.setAttribute("style", "display: initial");
-    //editButton.removeAttribute("style");
     cancelButton.setAttribute("style", "display: none");
     confirmButton.setAttribute("style", "display: none");
     inputToModify.setAttribute("readonly", "readonly");
     inputToModify.setAttribute("style", "pointer-events: none; background-color: rgb(56, 127, 194); color: white;")
-    //inputToModify.style="pointer-events: none; background-color: rgb(56, 127, 194); color: white";
     inputToModify.value= itemList[indexToEdit].name;
 }
 function confirmEdit(indexToEdit) {
@@ -157,7 +152,6 @@ function confirmEdit(indexToEdit) {
     inputToModify.setAttribute("style", "pointer-events: none; background-color: rgb(56, 127, 194); color: white;");
     storeLocally();
 }
-
 
 function deleteItem(indexToDelete) {
     itemList.splice(indexToDelete, 1);
