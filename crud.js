@@ -68,12 +68,12 @@ function render() {
                     id="item0${i}_name"
                     class="item_name"
                     value="${itemList[i].name}"
-                    readonly="true"
+                    readonly
                     style
                 />
                 <i id="editButton0${i}" style onclick="editItem(${i})"class="fa-solid fa-pen-to-square"></i>
                 <i id="cancelEditButton0${i}" style="display: none" onclick="cancelEdit(${i})"class="fa-solid fa-xmark"></i>
-                <i id="confirmEditButton0${i}" style="display: none" class="fa-solid fa-check"></i>
+                <i id="confirmEditButton0${i}" style="display: none" onclick="confirmEdit(${i})" class="fa-solid fa-check"></i>
             </div>
             <i style onclick="deleteItem(${i})"class="fa-solid fa-trash"></i>
         </li>`
@@ -88,10 +88,10 @@ function editItem(indexToEdit) {
     let confirmButton = document.getElementById(`confirmEditButton0${indexToEdit}`);
     let inputToModify = document.getElementById(`item0${indexToEdit}_name`);
     console.log(inputToModify.readonly);
-    editButton.style = "display: none"
-    cancelButton.style = "";
-    confirmButton.style = "";
-    inputToModify.readonly="false";
+    editButton.setAttribute("style", "display: none")
+    cancelButton.removeAttribute("style");
+    confirmButton.removeAttribute("style");
+    inputToModify.removeAttribute("readonly");
     inputToModify.style="pointer-events: auto; background-color: white; color: black";
     inputToModify.value= itemList[indexToEdit].name;
 }
@@ -102,18 +102,27 @@ function cancelEdit(indexToEdit) {
     let confirmButton = document.getElementById(`confirmEditButton0${indexToEdit}`);
     let inputToModify = document.getElementById(`item0${indexToEdit}_name`);
 
-    editButton.style = ""
-    cancelButton.style = "display: none";
-    confirmButton.style = "display: none";
-    inputToModify.readonly="false";
+    editButton.removeAttribute("style");
+    cancelButton.setAttribute("style", "display: none");
+    confirmButton.setAttribute("style", "display: none");
+    inputToModify.setAttribute("readonly", "readonly");
     inputToModify.style="pointer-events: none; background-color: rgb(56, 127, 194); color: white";
     inputToModify.value= itemList[indexToEdit].name;
+}
+function confirmEdit(indexToEdit) {
+    let newName = document.getElementById(`item0${indexToEdit}_name`).value;
+    let oldName = itemList[indexToEdit].name;
+    console.log(oldName);
+    console.log(newName);
+    if (oldName != newName) oldName=newName; 
+    else cancelEdit();
 }
 
 function deleteItem(indexToDelete) {
     itemList.splice(indexToDelete, 1);
     render();
 }
+
 
 // check valid url function
 

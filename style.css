@@ -160,3 +160,13 @@
     opacity: 0.6;
     cursor:pointer;
 }
+
+.fa-xmark:hover {
+    opacity: 0.6;
+    cursor:pointer;
+}
+
+.fa-check:hover {
+    opacity: 0.6;
+    cursor:pointer;
+}
