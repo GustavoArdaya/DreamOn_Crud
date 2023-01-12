@@ -76,6 +76,7 @@
 }
 #add_title {
     padding: 3px 6px;
+    
 }
 
 #add_title:focus::placeholder {
@@ -147,7 +148,7 @@
 .item_name {
     color: white;
     grid-area: name;
-    width: 130px;
+    width: 100%;
     border: none;
     background-color: rgb(56, 127, 194);
     pointer-events: none; 

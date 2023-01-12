@@ -97,6 +97,7 @@ function render() {
                     value="${displayList[i].name}"
                     readonly
                     style
+                    maxlength="24"
                 />
                 <i id="editButton0${i}" style="display: initial" onclick="editItem(${i})"class="fa-solid fa-pen-to-square"></i>
                 <i id="cancelEditButton0${i}" style="display: none" onclick="cancelEdit(${i})"class="fa-solid fa-xmark"></i>
