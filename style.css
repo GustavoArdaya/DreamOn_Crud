@@ -6,12 +6,34 @@
 }
 .navbar {
     display: flex;
-    justify-content:center;
+    justify-content:space-evenly;
+    align-items: center;
     gap:20px;
     padding: 20px;
     background-color:rgb(56, 127, 194);
     color: white;
 
+}
+
+.search{
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+}
+#search_bar {
+    width: 70vw;
+    padding: 5px 15px;
+    border-radius: 5px;
+} 
+
+#search_bar:focus::placeholder {
+    color: transparent;
+  }
+
+.fa-magnifying-glass {
+    /* padding: 0 15px; */
 }
 .fa-magnifying-glass:hover {
     opacity: 0.6;

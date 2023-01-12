@@ -33,6 +33,7 @@ function filterResults(searchInput) {
 let keyword = searchInput.toLowerCase();
 let regex = new RegExp(`${keyword}`, "g");
 displayList = itemList.filter(key => regex.test(key.name.toLowerCase()));
+//console.log(displayList);
 }
 
 // Add Bar functions
@@ -67,14 +68,14 @@ function createNewItem() {
 // Render function    
 function render() {
     let template = "";
-    for (let i = 0; i < itemList.length; i++) {
+    for (let i = 0; i < displayList.length; i++) {
         template += 
         `<li class="item_container" id="item-${i}">
             <div class="item_img_container">
                 <img
                     class="item_img"
                     id="img-${i}"
-                    src="${itemList[i].photoUrl}"
+                    src="${displayList[i].photoUrl}"
                     alt="#"
                 />
             </div>
@@ -84,7 +85,7 @@ function render() {
                     type="text"
                     id="item0${i}_name"
                     class="item_name"
-                    value="${itemList[i].name}"
+                    value="${displayList[i].name}"
                     readonly
                     style
                 />
