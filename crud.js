@@ -12,6 +12,7 @@ let addBar = document.getElementById("add_items_bar");
 let titleInput = document.getElementById("add_title");
 let urlInput = document.getElementById("add_image");
 let itemListDOM = document.getElementById("object_list");
+let searchInput = document.getElementById("search_bar");
 
 // main variables
 let itemList = [];
@@ -24,16 +25,22 @@ displayList = itemList;
 {name: "Paisaje 2", photoUrl: "https://www.blogdelfotografo.com/wp-content/uploads/2014/08/61.jpg"},
 {name: "Paisaje 3", photoUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"}]; */
 
-// Render at load
 
-render();
+
+render(); // Render at load
 
 // Search bar functions
-function filterResults(searchInput) {
-let keyword = searchInput.toLowerCase();
+function filterResults() {
+let keyword = searchInput.value.toLowerCase();
 let regex = new RegExp(`${keyword}`, "g");
+if (keyword != "") {
 displayList = itemList.filter(key => regex.test(key.name.toLowerCase()));
-//console.log(displayList);
+console.log(displayList);
+render();
+} else {
+    displayList = itemList;
+    render();
+}
 }
 
 // Add Bar functions

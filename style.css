@@ -32,9 +32,7 @@
     color: transparent;
   }
 
-.fa-magnifying-glass {
-    /* padding: 0 15px; */
-}
+
 .fa-magnifying-glass:hover {
     opacity: 0.6;
     cursor:pointer;
