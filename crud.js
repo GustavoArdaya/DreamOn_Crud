@@ -68,6 +68,8 @@ function createNewItem() {
         console.log(itemList);
     } else console.log("incorrect input"); 
     console.log(isValidUrl(urlInput.value));
+    titleInput.value="";
+    urlInput.value="";
     storeLocally()
     render();
     }
