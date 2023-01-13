@@ -134,8 +134,7 @@ function cancelEdit(indexToEdit) {
   cancelButton.setAttribute("style", "display: none");
   confirmButton.setAttribute("style", "display: none");
   inputToModify.setAttribute("readonly", "readonly");
-  inputToModify.setAttribute("style","pointer-events: none; background-color: rgb(56, 127, 194); color: white;")
-  );
+  inputToModify.setAttribute("style","pointer-events: none; background-color: rgb(56, 127, 194); color: white;");
   inputToModify.value = itemList[indexToEdit].name;
 }
 function confirmEdit(indexToEdit) {
