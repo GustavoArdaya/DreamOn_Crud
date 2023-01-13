@@ -66,8 +66,10 @@ function createNewItem() {
     console.log(example01);
     itemList.push(example01);
     console.log(itemList);
-  } else console.log("incorrect input");
-  
+  } else {
+    console.log("incorrect input");
+    alert("Name should be less than 24 characters and image should be valid url");
+}
   console.log(isValidUrl(urlInput.value));
   titleInput.value = "";
   urlInput.value = "";
