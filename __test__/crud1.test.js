@@ -28,7 +28,7 @@ test('should delete item from list by Id', () => {
     expect(sut.length).toEqual(1);
 })
 
-test('should add item into list', () => {
+test('should add item into list from object', () => {
     //GIVEN
     const list = [
         { id: 3214987982, title: "item1", imgUrl: "ljsldjfsljf.jpg"}, 
