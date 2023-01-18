@@ -14,3 +14,5 @@ const crud = {
 
     },
 }
+
+module.exports = crud;

@@ -1,0 +1,22 @@
+{
+  "name": "dreamon_crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "crud.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoArdaya/DreamOn_Crud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GustavoArdaya/DreamOn_Crud/issues"
+  },
+  "homepage": "https://github.com/GustavoArdaya/DreamOn_Crud#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}

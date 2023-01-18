@@ -1,0 +1,1 @@
+const crud1 = require ('../src/crud1');
