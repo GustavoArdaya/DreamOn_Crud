@@ -17,9 +17,15 @@ const itemList = {
     },
     addNewItem(item) {
         let newItem = {
+            id: Math.floor((Math.random() * 10**10)),
             title: item.title,
             imgUrl: item.imgUrl
         }
+        this.list.push(newItem);
+    },
+    editTitleById(id, newTitle) {
+        let index = this.list.findIndex((item) => item.id == id);
+        this.list[index].title = newTitle;
     }
 }
 
