@@ -7,15 +7,16 @@ const itemList = {
             imgUrl: "https://static.wixstatic.com/media/ea71bb_5c8f1a2d38954c5d8422d8d706593d54~mv2.png/v1/fill/w_872,h_873,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/ea71bb_5c8f1a2d38954c5d8422d8d706593d54~mv2.png"
         }
     },
-    addItemtoList(data) {
+    initialize(data) {
         this.list = data;
         return this;
     },
-    deleteItemFromList() {
-
+    deleteById(id) {
+        let index = this.list.findIndex((item) => item.id == id);
+        this.list.splice(index, 1);
     },
 }
 
-module.exports = {itemList }
+module.exports = { itemList }
 
 //console.log(crud.addItemtoList());
