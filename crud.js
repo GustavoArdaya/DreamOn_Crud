@@ -40,6 +40,8 @@ function filterResults() {
   }
 }
 
+//problemas con filtro por indice - Cambiar delete y otras funciones a porID!!!
+
 // Add Bar functions
 function showAddBar() {
   addButton.style = "display:none";
