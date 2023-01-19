@@ -12,18 +12,26 @@ urlInput : document.getElementById("add_image"),
 itemListDOM : document.getElementById("object_list"),
 searchInput : document.getElementById("search_bar"),
 
-showElement(element) {
-    element.className = "visible"
+// showElement(element) {
+//     element.className = "visible"
+// },
+
+construct() {
+this.addButton.addEventListener("click", () => this.showAddBar());
+this.minusButton.addEventListener("click", () => this.hideAddBar());
 },
-addEventListener() {
-    
-},
+
 showAddBar() {
     this.addButton.style = "display:none";
     this.minusButton.style = "display:block";
     this.addBar.style = "display:block";
-  }
+},
 
+hideAddBar() {
+    addButton.style = "display:block";
+    minusButton.style = "display:none";
+    addBar.style = "display:none";
+}
 } 
 
 const DOMitem = document.createElement("navbar");
