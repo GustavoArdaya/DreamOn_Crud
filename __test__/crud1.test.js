@@ -1,5 +1,5 @@
-const { itemList } = require("../src/crud1")
-//import { itemList } from "../src/crud1";
+//const { itemList } = require("../src/crud1")
+import { itemList } from "../src/crud1";
 
 test('should accept a list input and store it into object list', () => {
     //GIVEN
