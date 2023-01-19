@@ -17,7 +17,13 @@ showElement(element) {
 },
 addEventListener() {
     
-}
+},
+showAddBar() {
+    this.addButton.style = "display:none";
+    this.minusButton.style = "display:block";
+    this.addBar.style = "display:block";
+  }
+
 } 
 
 const DOMitem = document.createElement("navbar");
